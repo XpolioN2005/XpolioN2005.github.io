@@ -1,12 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    hello world
-    test 1
-</body>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Pixel Portfolio — Game Dev</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+			rel="stylesheet" />
+
+		<script src="https://cdn.tailwindcss.com"></script>
+		<style>
+			body {
+				margin: 0;
+				font-family: "Press Start 2P", monospace;
+				background: repeating-linear-gradient(
+					45deg,
+					#0b0b0f 0 6px,
+					#08111a 6px 12px
+				);
+				color: #e6f3ff;
+			}
+			.app {
+				display: flex;
+				min-height: 100vh;
+			}
+			.sidebar {
+				width: 280px;
+				background: #1a1625;
+				padding: 24px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				border-right: 3px solid rgba(255, 255, 255, 0.1);
+			}
+			.avatar {
+				width: 120px;
+				height: 120px;
+				background: #222;
+				border: 3px solid rgba(255, 255, 255, 0.2);
+				box-shadow: 4px 4px 0 #000;
+				image-rendering: pixelated;
+				overflow: hidden;
+			}
+			.avatar img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				image-rendering: pixelated;
+			}
+			.sidebar h1 {
+				font-size: 14px;
+				margin-top: 12px;
+			}
+			.sidebar h2 {
+				font-size: 12px;
+				margin-top: 5px;
+				margin-bottom: 8px;
+			}
+			.sidebar p {
+				font-size: 10px;
+				opacity: 0.8;
+				margin-top: 6px;
+				text-align: center;
+			}
+			.socials {
+				display: flex;
+				gap: 10px;
+				margin-top: 10px;
+			}
+			.socials a {
+				width: 36px;
+				height: 36px;
+				display: grid;
+				place-items: center;
+				background: #2b2440;
+				border: 2px solid rgba(255, 255, 255, 0.1);
+				box-shadow: 3px 3px 0 #000;
+				color: #e6f3ff;
+				font-size: 16px;
+				text-decoration: none;
+			}
+			.socials a:hover {
+				transform: translateY(-3px);
+				transition: transform 0.15s;
+			}
+			nav {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+				margin-top: 24px;
+				width: 100%;
+			}
+			.nav-link {
+				padding: 10px;
+				text-align: center;
+				background: #2b2440;
+				border: 2px solid rgba(255, 255, 255, 0.1);
+				text-decoration: none;
+				color: #e6f3ff;
+				font-size: 10px;
+				box-shadow: 3px 3px 0 #000;
+			}
+			.nav-link:hover {
+				background: #333051;
+			}
+			.main {
+				flex: 1;
+				padding: 30px;
+				overflow-y: auto;
+				background: #0b0b0f;
+			}
+			section {
+				margin-bottom: 40px;
+			}
+			.section-title {
+				font-size: 12px;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				margin-bottom: 12px;
+			}
+			.card {
+				background: #151526;
+				border: 2px solid rgba(255, 255, 255, 0.05);
+				padding: 16px;
+				box-shadow: 4px 4px 0 #000;
+			}
+			.projects {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+				gap: 14px;
+			}
+			.project-card img {
+				width: 100%;
+				height: 120px;
+				object-fit: contain;
+				background: #111;
+				image-rendering: pixelated;
+			}
+			footer {
+				text-align: center;
+				font-size: 10px;
+				opacity: 0.7;
+				margin-top: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="app">
+			<aside class="sidebar">
+				<div class="avatar"><img src="/avatar-pixel.png" alt="avatar" /></div>
+				<h1>Darsan Ghosh</h1>
+				<h2>(aka. XpolioN)</h2>
+				<p>Game Developer, Softwear Developer</p>
+				<div class="socials">
+					<a href="https://xpolion.itch.io/" target="_blank" title="Itch.io"
+						><i class="fa-brands fa-itch-io"></i
+					></a>
+					<a
+						href="https://www.linkedin.com/in/xpolion"
+						target="_blank"
+						title="LinkedIn"
+						><i class="fa-brands fa-linkedin-in"></i
+					></a>
+					<a
+						href="https://github.com/xpolion2005"
+						target="_blank"
+						title="GitHub"
+						><i class="fa-brands fa-github"></i
+					></a>
+					<a
+						href="https://leetcode.com/u/xpolion"
+						target="_blank"
+						title="LeetCode"
+						><i class="fa-solid fa-code"></i
+					></a>
+				</div>
+				<nav>
+					<a href="#about" class="nav-link">About</a>
+					<a href="#experience" class="nav-link">Experience</a>
+					<a href="#projects" class="nav-link">Projects</a>
+					<a href="#skills" class="nav-link">Skills</a>
+					<a href="#contact" class="nav-link">Contact</a>
+				</nav>
+			</aside>
+
+			<main class="main">
+				<section id="about">
+					<div class="section-title">About Me</div>
+					<div class="card">
+						<p style="font-size: 11px; line-height: 1.6">
+							I create pixel-art games emphasizing gameplay and retro feel. I
+							handle art, code, and design for small-scope titles.
+						</p>
+					</div>
+				</section>
+
+				<section id="experience">
+					<div class="section-title">Experience</div>
+					<div class="card">
+						<p style="font-size: 11px; line-height: 1.6">
+							Gameplay Programmer at Indie Studio (2022–Present). Focused on
+							core systems and pixel asset pipelines.
+						</p>
+					</div>
+				</section>
+
+				<section id="projects">
+					<div class="section-title">Projects</div>
+					<div class="projects">
+						<div class="card project-card">
+							<img src="/placeholder-project1.gif" alt="Pixel Runner" />
+							<p style="font-size: 11px; margin-top: 8px">
+								Pixel Runner — Endless runner with retro flair.
+							</p>
+						</div>
+						<div class="card project-card">
+							<img src="/placeholder-project2.gif" alt="Dungeon Forge" />
+							<p style="font-size: 11px; margin-top: 8px">
+								Dungeon Forge — Procedural dungeon builder.
+							</p>
+						</div>
+						<div class="card project-card">
+							<img src="/placeholder-project3.gif" alt="Astro Harvest" />
+							<p style="font-size: 11px; margin-top: 8px">
+								Astro Harvest — Farming and exploration game.
+							</p>
+						</div>
+					</div>
+				</section>
+
+				<section id="skills">
+					<div class="section-title">Skills</div>
+					<div class="card">
+						<p style="font-size: 11px">
+							C#, GDScript, Unity, Godot, Pixel Art, Level Design
+						</p>
+					</div>
+				</section>
+
+				<section id="contact">
+					<div class="section-title">Contact</div>
+					<div class="card">
+						<p style="font-size: 11px">Email: youremail@example.com</p>
+						<div class="socials" style="margin-top: 10px">
+							<a href="https://itch.io/" target="_blank" title="Itch.io"
+								><i class="fa-brands fa-itch-io"></i
+							></a>
+							<a
+								href="https://www.linkedin.com/"
+								target="_blank"
+								title="LinkedIn"
+								><i class="fa-brands fa-linkedin-in"></i
+							></a>
+							<a href="https://github.com/" target="_blank" title="GitHub"
+								><i class="fa-brands fa-github"></i
+							></a>
+							<a href="https://leetcode.com/" target="_blank" title="LeetCode"
+								><i class="fa-solid fa-code"></i
+							></a>
+						</div>
+					</div>
+				</section>
+
+				<footer>© <span id="year"></span> YOUR NAME — Pixel Portfolio</footer>
+			</main>
+		</div>
+		<script
+			src="https://kit.fontawesome.com/8f0999dd1b.js"
+			crossorigin="anonymous"></script>
+		<script>
+			document.getElementById("year").textContent = new Date().getFullYear();
+		</script>
+	</body>
 </html>
